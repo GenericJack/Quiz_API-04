@@ -1,14 +1,14 @@
 // Javascript quiz
 
-const quizConatiner = document.querySelector("#questionContainer");
-const inputContainer= document.querySelector("#inputConatiner");
-const userNameInput= document.querySelector("#userName");
-const startQuizBtn= document.querySelector("#startquiz");
-const timerElement= document.querySelector("#timer");
-const submitBtn= document.querySelector("#submitBtn");
-const resultElement= document.querySelector("#result");
-const highScoreList= document.querySelector("#highScoreList");
-const viewHighScoreLink= document.querySelector("#viewHighScore");
+const quizConatiner = document.querySelector("#question-container");
+const inputContainer = document.querySelector("#inpu-container");
+const userNameInput = document.querySelector("#userName");
+const startQuizBtn = document.querySelector("#startQuiz");
+const timerElement = document.querySelector("#timer");
+const submitBtn = document.querySelector("#submitBtn");
+const resultElement = document.querySelector("#result");
+const highScoreList = document.querySelector("#highScoreList");
+const viewHighScoresLink = document.querySelector("#viewHighScores");
 
 const questions = [
     {

@@ -31,6 +31,11 @@ const questions = [
         options: ["alert(Hello World), msgBox(Hello World), alertBox[Hello World], Hello World"],
         correctAnswer: "alert(Hello World)"
     },
+    {
+        question:"During class, which phrase does our Glorious Leader, Stanley Lewis, use to indicate our understanding of the material",
+        options: ["prompt(Hello World), Fist to Five on that!, We're cooking with gas., It's Stanley Lewising Time!"],
+        correctAnswer: "Fist to Five on That!"
+    },
 ];
 
 let currentQuestionIndex = 0;

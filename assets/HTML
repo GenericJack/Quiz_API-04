@@ -21,9 +21,10 @@
 
                 </div>
                 <div class="high-score-list" id="highScoreList">
-                    
+
                 </div>
             </div> 
         </div>
+        <script src="script.js"></script>
     </body>
 </html>

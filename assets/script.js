@@ -12,24 +12,24 @@ const viewHighScoreLink= document.querySelector("#viewHighScore");
 
 const questions = [
     {
-        question:"",
-        options: [""],
-        correctAnswer: ""
+        question:"Inside which HTML element do we put Javascript?",
+        options: ["<javascript, <js>, <script>, <scripting>"],
+        correctAnswer: "<script>"
     },
     {
-        question:"",
-        options: [""],
-        correctAnswer: ""
+        question:"Where is the correct place to insert a Javascript?",
+        options: ["Both the <head> section and the <body> section, The <body> section, The <head> section"],
+        correctAnswer: "Both the <head> section and the <body> section"
     },
     {
-        question:"",
-        options: [""],
-        correctAnswer: ""
+        question:"An external JavaScript must contain the <script>",
+        options: ["True, False"],
+        correctAnswer: "False"
     },
     {
-        question:"",
-        options: [""],
-        correctAnswer: ""
+        question:"How do you write Hello World in an alert box? Assume double quotations are already placed around Hello World.",
+        options: ["alert(Hello World), msgBox(Hello World), alertBox[Hello World], Hello World"],
+        correctAnswer: "alert(Hello World)"
     },
 ];
 

@@ -1,9 +1,8 @@
-/* css style */
 body {
     font-family: Arial, sans-serif;
 }
 
-.quiz.container {
+.quiz-container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -108,3 +107,4 @@ button {
     display: block;
     margin: 10px 0;
 }
+

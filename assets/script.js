@@ -2,11 +2,12 @@ let playerName;
 let currentQuestionIndex;
 let score;
 let timeLeft;
+// Question bank
 const quizQuestions = [
     {
         question: "Inside which HTML element do we put Javascript?",
         options: ["<javascript>", "<js>", "<script>", "<scripting>"],
-        correctAnswerIndex: 2,
+        correctAnswerIndex: 1,
       },
       {
         question: "Where is the correct place to insert a Javascript?",
@@ -76,10 +77,10 @@ function showQuestion() {
 
     radioButtons.forEach((radio) => {
         radio.addEventListener("change", () => {
-          const selectedAnswer = parseInt(radio.value);
-          const correctAnswer = quizQuestions[currentQuestionIndex].correctAnswer;
+          const selectedAnswerIndex = parseInt(radio.value);
+          const correctAnswerIndex = questionObject.correctAnswerIndex;
   
-          if (selectedAnswer === correctAnswer) {
+          if (selectedAnswerIndex === correctAnswerIndex) {
             score++;
           }
         });
@@ -97,16 +98,18 @@ function checkAnswer() {
     return;
   }
 
-  const selectedAnswer = parseInt(selectedOption.value);
-  const correctAnswer = quizQuestions[currentQuestionIndex].correctAnswer;
+  const selectedAnswerIndex = parseInt(selectedOption.value);
+  const correctAnswerIndex = quizQuestions[currentQuestionIndex].correctAnswerIndex;
 
-  if (selectedAnswer === correctAnswer) {
+  if (selectedAnswerIndex === correctAnswerIndex) {
     score++;
   }
 
   currentQuestionIndex++;
   showQuestion();
 }
+
+showQuestion()
 
 function startTimer() {
   const timerElement = document.getElementById("time");

@@ -49,6 +49,8 @@ const quizQuestions = [
   
 ];
 
+letleaderboard = [];
+
 function startQuiz() {
   const nameInput = document.getElementById("nameInput");
   playerName = nameInput.value || "Anonymous";
@@ -62,7 +64,7 @@ function startQuiz() {
   showQuestion();
   startTimer();
 }
-
+// values of the question are here, 
 function showQuestion() {
   if (currentQuestionIndex < quizQuestions.length) {
     const questionObject = quizQuestions[currentQuestionIndex];
@@ -90,7 +92,7 @@ function showQuestion() {
     endQuiz();
   }
 }
-
+// inquires a nme is selected
 function checkAnswer() {
   const selectedOption = document.querySelector('input[name="option"]:checked');
   if (!selectedOption) {
@@ -101,8 +103,11 @@ function checkAnswer() {
   const selectedAnswerIndex = parseInt(selectedOption.value);
   const correctAnswerIndex = quizQuestions[currentQuestionIndex].correctAnswerIndex;
 
+ 
   if (selectedAnswerIndex === correctAnswerIndex) {
-    score++;
+    score += 1;
+  } else {
+    timeLeft -= 10;
   }
 
   currentQuestionIndex++;
@@ -116,12 +121,16 @@ function startTimer() {
   const timerInterval = setInterval(() => {
     timeLeft--;
     timerElement.textContent = timeLeft;
+    
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
       endQuiz();
     }
   }, 1000);
+  
 }
+
+
 
 function endQuiz() {
   document.getElementById("quiz-page").style.display = "none";
@@ -129,6 +138,7 @@ function endQuiz() {
 
   const scoreElement = document.getElementById("score");
   scoreElement.textContent = `${playerName}, Your score is: ${score}/${quizQuestions.length}`;
+  saveToLeaderboard();
 }
 
 function showLeaderboard() {

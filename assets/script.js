@@ -7,7 +7,7 @@ const quizQuestions = [
     {
         question: "Inside which HTML element do we put Javascript?",
         options: ["<javascript>", "<js>", "<script>", "<scripting>"],
-        correctAnswerIndex: 1,
+        correctAnswerIndex: 2,
       },
       {
         question: "Where is the correct place to insert a Javascript?",
@@ -138,12 +138,31 @@ function endQuiz() {
 
   const scoreElement = document.getElementById("score");
   scoreElement.textContent = `${playerName}, Your score is: ${score}/${quizQuestions.length}`;
+
   saveToLeaderboard();
 }
 
 function showLeaderboard() {
   // Save the score and player name to the leaderboard if it's in the top 5
-  
+  document.getElementById("end-page").style.display = "none";
+  document.getElementById("leaderboard-page").style.display = "block";
+}
+
+function saveToLeaderboard() {
+    leaderboard.push({ name: playerName, score: score });
+    leaderboard.sort((a, b) => b.score - a.score); // Sort the leaderboard in descending order by score
+    leaderboard = leaderboard.slice(0, 5);
+
+    const leaderboardElement = document.getElementById("leaderboard");
+  leaderboardElement.innerHTML = ""; // Clear previous leaderboard
+  leaderboard.forEach((entry, index) => {
+
+    const listItem = document.createElement("li");
+    listItem.textContent = `${index + 1}. ${entry.name}: ${entry.score}`;
+    leaderboardElement.appendChild(listItem);
+
+  });
+
   document.getElementById("end-page").style.display = "none";
   document.getElementById("leaderboard-page").style.display = "block";
 }

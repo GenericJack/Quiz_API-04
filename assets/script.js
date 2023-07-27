@@ -109,7 +109,7 @@ function checkAnswer() {
   showQuestion();
 }
 
-showQuestion()
+showQuestion();
 
 function startTimer() {
   const timerElement = document.getElementById("time");
